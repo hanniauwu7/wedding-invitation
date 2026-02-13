@@ -1,0 +1,323 @@
+:root {
+    --primary: #5D7C89; /* Azul 'Dusty' o Acero */
+    --secondary: #F4F6F7; /* Gris azulado muy suave */
+    --card-bg: #FFFFFF;
+    --text-dark: #2C3E50; /* Gris azulado oscuro para textos */
+    --text-light: #7F8C8D;
+    --accent: #B0BEC5; /* Gris plata */
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #D1D5DB; /* Fondo gris para resaltar el "celular" en PC */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Contenedor principal estilo Celular */
+.mobile-container {
+    width: 100%;
+    max-width: 450px; /* Ancho máximo de celular */
+    background-color: var(--secondary);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* 1. HERO / PORTADA */
+.hero {
+    position: relative;
+    height: 85vh;
+    background: url('../img/Portada.jpeg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 60px;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.script-font {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    margin: 0;
+    line-height: 1;
+}
+
+.subtitle {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+/* Reproductor de Música Flotante */
+.music-player {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 3;
+    width: 85%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.play-btn { color: var(--primary); font-size: 1.2rem; cursor: pointer; }
+.progress-bar { flex-grow: 1; height: 3px; background: #ddd; position: relative; }
+.progress-fill { width: 30%; height: 100%; background: var(--primary); }
+
+/* 2. CUENTA REGRESIVA */
+.countdown-section { padding: 40px 20px; text-align: center; }
+.countdown-title { font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; }
+
+.timer { display: flex; justify-content: center; gap: 15px; }
+.timer-box {
+    background: var(--primary);
+    color: white;
+    width: 70px; height: 70px;
+    border-radius: 50%;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 52, 0.4);
+}
+
+.timer-num { font-size: 1.5rem; font-weight: bold; line-height: 1; }
+.timer-label { font-size: 0.7rem; text-transform: uppercase; margin-top: 3px; }
+
+/* 3. TARJETAS DE EVENTOS */
+.card-section { padding: 20px; display: flex; flex-direction: column; gap: 30px; }
+.card {
+    background: var(--card-bg);
+    padding: 40px 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.icon-circle {
+    width: 60px; height: 60px;
+    margin: 0 auto 20px;
+    border: 1px solid var(--primary);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; color: var(--primary);
+}
+
+.card h3 { text-transform: uppercase; letter-spacing: 2px; margin: 0 0 10px 0; color: var(--text-dark); }
+.card p { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; margin: 5px 0; }
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    background: var(--primary);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.btn:hover { background: #0E1038; }
+
+/* 4. DETALLES (ICONOS ELEGANTES) */
+/* Estilos nuevos para la sección de detalles */
+.details-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.detail-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08); /* Sombra suave */
+    text-align: center;
+    flex: 1 1 300px; /* Se adapta al tamaño */
+    max-width: 400px;
+    transition: transform 0.3s ease;
+}
+
+.detail-card:hover {
+    transform: translateY(-5px); /* Efecto al pasar el mouse */
+}
+
+.detail-icon i {
+    font-size: 2.5rem;
+    color: #d4af37; /* Color dorado para los iconos (puedes cambiarlo) */
+    margin-bottom: 15px;
+}
+
+.detail-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Estilo específico para la imagen del Dress Code */
+.dress-code-img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: contain; /* Ajusta la imagen sin cortarla */
+    border-radius: 8px;
+    margin: 10px 0;
+    border: 1px solid #eee;
+}
+
+/* Estilo para resaltar lo de No Niños */
+.adults-only-box {
+    background-color: #fff0f0; /* Fondo rojizo muy suave */
+    border-left: 4px solid #e74c3c; /* Línea roja elegante */
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+.highlight-text {
+    font-weight: 600;
+    color: #e74c3c; /* Texto rojo oscuro para "No niños" */
+}
+/* 5. GALERÍA POLAROID STACK */
+.gallery-section {
+    padding: 20px 20px 60px;
+    text-align: center;
+    overflow: hidden; /* Evita que las fotos que vuelan estiren la página */
+}
+
+.gallery-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+}
+
+/* Contenedor invisible para centrar la pila */
+.polaroid-stack-container {
+    position: relative;
+    width: 280px;  /* Ancho de la polaroid */
+    height: 350px; /* Alto de la polaroid */
+    margin: 0 auto;
+}
+
+.polaroid-stack {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Diseño de CADA Polaroid */
+.polaroid-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    padding: 15px 15px 50px 15px; /* Más padding abajo para el texto */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.5s;
+    /* Rotación inicial sutil para que parezca natural */
+    transform: rotate(0deg); 
+}
+
+.polaroid-card img {
+    width: 100%;
+    height: 240px; /* Altura de la foto interna */
+    object-fit: cover;
+    background-color: #f0f0f0;
+    border: 1px solid #eee;
+}
+
+.polaroid-card .caption {
+    font-family: 'Great Vibes', cursive; /* Fuente manuscrita */
+    font-size: 1.5rem;
+    color: #444;
+    margin-top: 15px;
+    transform: rotate(-2deg); /* Texto un poco chueco estilo mano */
+}
+
+/* CLASES PARA LA ANIMACIÓN (JS las pone y quita) */
+
+/* Clase para rotar un poco las fotos de atrás aleatoriamente */
+.polaroid-card:nth-child(odd) { transform: rotate(3deg); }
+.polaroid-card:nth-child(even) { transform: rotate(-2deg); }
+
+/* Clase cuando la foto "vuela" hacia la izquierda */
+.fly-out {
+    transform: translate(-150%, -20%) rotate(-30deg) !important;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Clase para esconderla temporalmente antes de volver al fondo */
+.reset-position {
+    transform: translate(0, 0) scale(0.9) !important;
+    opacity: 0;
+    z-index: -1;
+    transition: none; /* Sin animación para el reset instantáneo */
+}
+/* 6. REGALOS */
+.gifts-section { background-color: white; padding: 50px 20px; text-align: center; }
+.store-btn {
+    display: block; background: #333; color: white;
+    padding: 15px; margin: 10px auto; max-width: 250px;
+    border-radius: 8px; text-decoration: none;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+
+/* 7. RSVP */
+.rsvp-section {
+    padding: 50px 20px; text-align: center;
+    background: linear-gradient(135deg, #000034, #0E1038);
+    color: white;
+}
+.rsvp-form input, .rsvp-form select {
+    width: 100%; padding: 15px; margin-bottom: 10px;
+    border: none; border-radius: 5px; font-family: 'Montserrat', sans-serif;
+}
+.rsvp-btn {
+    width: 100%; padding: 15px; background: #1F2933;
+    color: white; border: none; border-radius: 5px;
+    text-transform: uppercase; font-weight: bold; cursor: pointer;
+}
+
+/* ANIMACIONES */
+.fade-in { animation: fadeIn 1.5s ease; }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

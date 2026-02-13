@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Boda | Kassandra & Brian</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="mobile-container">
+
+        <header class="hero">
+            <div class="hero-content fade-in">
+                <h1 class="script-font">Nos Casamos</h1>
+                <p class="subtitle">KASSANDRA & BRIAN</p>
+            </div>
+            <audio id="bodaAudio" loop>
+                <source src="audio/MMXX's.mp3" type="audio/mpeg">
+            </audio>
+            <div class="music-player">
+                <i class="fas fa-play play-btn" id="playIcon" onclick="toggleMusic()"></i>
+
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+
+                <i class="fas fa-volume-up" style="color:#aaa; font-size:0.8rem;"></i>
+            </div>
+        </header>
+
+        <section class="countdown-section">
+            <h2 class="countdown-title">¡Falta Poco!</h2>
+            <div class="timer" id="countdown">
+                <div class="timer-box"><span class="timer-num" id="d">00</span><span class="timer-label">Días</span>
+                </div>
+                <div class="timer-box"><span class="timer-num" id="h">00</span><span class="timer-label">Hrs</span>
+                </div>
+                <div class="timer-box"><span class="timer-num" id="m">00</span><span class="timer-label">Min</span>
+                </div>
+                <div class="timer-box"><span class="timer-num" id="s">00</span><span class="timer-label">Seg</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="card-section">
+            <div class="card fade-in">
+                <div class="icon-circle"><i class="fas fa-church"></i></div>
+                <h3>Ceremonia</h3>
+                <p>Quinta Maria Jardin de Eventos</p>
+                <p><strong>6:00 PM</strong></p>
+                <a href=https://maps.app.goo.gl/Pco9kmjdYqEjeDHi6?g_st=aw" target="_blank" class="btn">Ver Ubicación</a>
+            </div>
+
+            <div class="card fade-in">
+                <div class="icon-circle"><i class="fas fa-glass-cheers"></i></div>
+                <h3>Recepción</h3>
+                <p>Misma ubicación de Ceremonia Religiosa</p>
+                <p><strong>7:00 PM</strong></p>
+                <a href="https://maps.app.goo.gl/Pco9kmjdYqEjeDHi6?g_st=aw" target="_blank" class="btn">Ver Ubicación</a>
+            </div>
+        </section>
+
+<section class="details-grid">
+    
+    <div class="detail-card fade-in">
+        <div class="detail-icon"><i class="fas fa-child-reaching" style="color: #e74c3c;"></i></div>
+        <h4 class="detail-title">Recepción Adultos</h4>
+        
+        <div class="adults-only-box">
+            <p style="font-size:0.9rem; color:#555; line-height: 1.6;">
+                Amamos a los niños, pero creemos que papá y mamá merecen un día libre.
+            </p>
+            <p style="margin-top:10px; font-weight: bold; text-transform: uppercase; font-size: 0.85rem;">
+                <i class="fas fa-ban"></i> Evento sin niños
+            </p>
+        </div>
+    </div>
+
+    <div class="detail-card fade-in">
+        <div class="detail-icon"><i class="fas fa-user-tie"></i></div>
+        <h4 class="detail-title">Dress Code</h4>
+        
+        <p style="font-weight: 600; color:#333;">FORMAL / COLORES PRIMAVERA</p>
+        
+        <img src="img/dresscode.png" alt="Paleta de colores sugerida" class="dress-code-img">
+        
+        <p style="font-size:0.85rem; color:#666; margin-top:10px;">
+            Por favor evitar colores: <br>
+            <span style="color: #888; text-decoration: line-through;">Blanco y Azul</span> 🚫
+        </p>
+    </div>
+
+</section>
+
+        <section class="gallery-section">
+            <h2 class="gallery-title">Nuestra Historia</h2>
+
+            <div class="polaroid-stack-container">
+                <div class="polaroid-stack" id="polaroidStack">
+                    <div class="polaroid-card">
+                        <img src="img/foto1.jpeg" alt="Foto 1">
+                        <p class="caption">El inicio</p>
+                    </div>
+                    <div class="polaroid-card">
+                        <img src="img/foto2.jpeg" alt="Foto 2">
+                        <p class="caption">Nuestro viaje</p>
+                    </div>
+                    <div class="polaroid-card">
+                        <img src="img/foto3.jpeg" alt="Foto 3">
+                        <p class="caption">¡Sí quiero!</p>
+                    </div>
+                    <div class="polaroid-card">
+                        <img src="img/foto4.jpeg" alt="Foto 4">
+                        <p class="caption">Para siempre</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gifts-section">
+            <div class="icon-circle" style="border:none;"><i class="fas fa-gift"
+                    style="font-size:2.5rem; color: var(--primary);"></i></div>
+            <h3>Mesa de Regalos</h3>
+            <p>Su presencia es nuestro mayor regalo, pero si desean tener un detalle:</p>
+            <a href="#" class="store-btn"><i class="fab fa-amazon"></i> Mesa en Amazon</a>
+            <a href="#" class="store-btn" style="background:#e91e63;"><i class="fas fa-shopping-bag"></i> Liverpool</a>
+            <p style="margin-top:20px; font-size:0.8rem; color:#888;">La opción en mesa "Lluvia de sobres" 💌</p>
+        </section>
+
+        <section class="rsvp-section">
+            <h2 style="font-family: 'Great Vibes'; font-size: 3rem; margin-bottom: 10px;">Confirmar</h2>
+            <p style="margin-bottom: 20px;">Por favor confirma antes del 30 de Abril 2026</p>
+
+            <form class="rsvp-form">
+                <input type="text" placeholder="Nombre Completo" required>
+                <input type="number" placeholder="Número de personas" min="1" max="2">
+                <select>
+                    <option>¡Claro que iré!</option>
+                    <option>No podré asistir :(</option>
+                </select>
+                <button type="button" class="rsvp-btn" onclick="alert('¡Gracias por confirmar!')">Enviar</button>
+            </form>
+
+            <a href="https://wa.me/5211234567890"
+                style="display:block; margin-top:20px; color:white; text-decoration:none;">
+                <i class="fab fa-whatsapp"></i> Confirmar por WhatsApp
+            </a>
+        </section>
+
+        <footer style="padding:20px; text-align:center; font-size:0.7rem; color:#aaa;">
+            Hecho con amor para K & B
+        </footer>
+
+    </div>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
