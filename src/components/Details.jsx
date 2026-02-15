@@ -37,7 +37,7 @@ const Details = () => {
                 <img
                     src="/img/dresscode.png"
                     alt="Paleta de colores sugerida"
-                    className="w-full max-w-[200px] mx-auto rounded-lg mb-4"
+                    className="w-full max-w-[200px] mx-auto mb-4 border-0"
                 />
 
                 <p className="text-xs text-slate-500">

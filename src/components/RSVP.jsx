@@ -17,7 +17,7 @@ const RSVP = () => {
             setRsvpStatus('success');
             // Here you would typically send data to a backend
             const message = ` Hola! Soy ${formData.name}. Confirmo mi asistencia para ${formData.guests} personas.`;
-            const whatsappUrl = `https://wa.me/524941043296?text=${encodeURIComponent(message)}`;
+            const whatsappUrl = `https://wa.me/524492905708?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank');
         }, 1500);
     };
@@ -29,7 +29,7 @@ const RSVP = () => {
 
             <div className="max-w-lg mx-auto relative z-10 bg-slate-800/80 p-8 md:p-12 rounded-3xl border border-white/10 shadow-2xl">
                 <div className="text-center mb-10">
-                    <Heart className="w-12 h-12 text-primary mx-auto mb-4 animate-pulse" fill="currentColor" />
+                    <Heart className="w-12 h-12 text-[#89CFF0] mx-auto mb-4 animate-pulse" fill="currentColor" />
                     <h2 className="text-5xl font-serif mb-4">Confirmar</h2>
                     <p className="text-slate-300 font-light">Por favor confirma antes del 30 de abril de 2026</p>
                 </div>

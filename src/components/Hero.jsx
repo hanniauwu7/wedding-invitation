@@ -36,7 +36,7 @@ const Hero = () => {
     };
 
     return (
-        <header className="relative min-h-[100dvh] w-full flex flex-col items-center justify-end pb-24 md:pb-20 text-center">
+        <header className="relative min-h-[100dvh] w-full flex flex-col items-center justify-end pb-32 md:pb-20 text-center">
             {/* Background Image with Overlay */}
             <div className="absolute inset-0 z-0 will-change-transform">
                 <img
@@ -49,7 +49,7 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             </div>
 
-            <div className="relative z-10 text-white animate-fade-in space-y-4 px-6 pb-8">
+            <div className="relative z-10 text-white animate-fade-in space-y-4 px-6 pb-16 md:pb-8">
                 <h1 className="font-serif text-5xl sm:text-6xl md:text-8xl drop-shadow-lg leading-tight">Nos Casamos</h1>
                 <p className="text-lg md:text-xl uppercase tracking-[0.3em] font-light">KASSANDRA & BRIAN</p>
                 <div className="w-24 h-0.5 bg-white/60 mx-auto my-4"></div>
