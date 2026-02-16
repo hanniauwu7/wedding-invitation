@@ -53,7 +53,7 @@ const Hero = () => {
                 <h1 className="font-serif text-5xl sm:text-6xl md:text-8xl drop-shadow-lg leading-tight">Nos Casamos</h1>
                 <p className="text-lg md:text-xl uppercase tracking-[0.3em] font-light">KASSANDRA & BRIAN</p>
                 <div className="w-24 h-0.5 bg-white/60 mx-auto my-4"></div>
-                <p className="text-lg md:text-2xl font-serif tracking-widest text-shadow-sm">30 de Mayo, 2026</p>
+                <p className="text-lg md:text-2xl font-serif tracking-widest text-shadow-sm">31 de Mayo, 2026</p>
             </div>
 
             {/* Audio Player */}
