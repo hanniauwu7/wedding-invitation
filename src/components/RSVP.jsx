@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { Send, CheckCircle, Heart } from 'lucide-react';
+import { Heart } from 'lucide-react';
 
 const RSVP = () => {
     const [formData, setFormData] = useState({ name: '', guests: 1, attendance: 'si' });
-    const [rsvpStatus, setRsvpStatus] = useState('idle');
+
 
     const handleNameChange = (e) => {
         // Solo permitir letras, espacios y acentos
@@ -18,20 +18,19 @@ const RSVP = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setRsvpStatus('submitting');
-        setTimeout(() => {
-            setRsvpStatus('success');
 
-            let message;
-            if (formData.attendance === 'si') {
-                message = `Hola! Soy ${formData.name}. Confirmo mi asistencia para ${formData.guests} persona(s). Nos vemos en la boda!`;
-            } else {
-                message = `Hola! Soy ${formData.name}. Lamentablemente no podre asistir, pero les deseo muchas felicidades en esta nueva etapa juntos. Les mando un fuerte abrazo!`;
-            }
+        let message;
+        if (formData.attendance === 'si') {
+            message = `Hola! Soy ${formData.name}. Confirmo mi asistencia para ${formData.guests} persona(s). Nos vemos en la boda!`;
+        } else {
+            message = `Hola! Soy ${formData.name}. Lamentablemente no podre asistir, pero les deseo muchas felicidades en esta nueva etapa juntos. Les mando un fuerte abrazo!`;
+        }
 
-            const whatsappUrl = `https://wa.me/524492905708?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
-        }, 1500);
+        const whatsappUrl = `https://wa.me/524492905708?text=${encodeURIComponent(message)}`;
+
+        // Usar window.location.href para que el sistema operativo del teléfono
+        // abra WhatsApp directamente, sin ser bloqueado como popup
+        window.location.href = whatsappUrl;
     };
 
     return (
@@ -46,70 +45,53 @@ const RSVP = () => {
                     <p className="text-[#B8DFF0] font-light">Por favor confirma antes del 30 de abril de 2026</p>
                 </div>
 
-                {rsvpStatus === 'success' ? (
-                    <div className="text-center py-12 animate-fade-in">
-                        <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
-                        <h3 className="text-2xl font-serif mb-2">¡Gracias por confirmar!</h3>
-                        <p className="text-slate-300 mb-6">Hemos abierto WhatsApp para enviar tu respuesta.</p>
-                        <button
-                            onClick={() => setRsvpStatus('idle')}
-                            className="text-sm text-blue-300 hover:text-blue-200 underline"
-                        >
-                            Enviar otra respuesta
-                        </button>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                    <div>
+                        <input
+                            type="text"
+                            name="name"
+                            required
+                            placeholder="Nombre Completo"
+                            value={formData.name}
+                            onChange={handleNameChange}
+                            pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+"
+                            title="Solo se permiten letras"
+                            className="w-full px-4 py-4 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-white placeholder-slate-400 transition-colors"
+                        />
                     </div>
-                ) : (
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                        <div>
+
+                    <div className={`grid gap-4 ${formData.attendance === 'si' ? 'grid-cols-2' : 'grid-cols-1'}`}>
+                        {formData.attendance === 'si' && (
                             <input
-                                type="text"
-                                name="name"
-                                required
-                                placeholder="Nombre Completo"
-                                value={formData.name}
-                                onChange={handleNameChange}
-                                pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+"
-                                title="Solo se permiten letras"
-                                className="w-full px-4 py-4 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-white placeholder-slate-400 transition-colors"
-                            />
-                        </div>
-
-                        <div className={`grid gap-4 ${formData.attendance === 'si' ? 'grid-cols-2' : 'grid-cols-1'}`}>
-                            {formData.attendance === 'si' && (
-                                <input
-                                    type="number"
-                                    name="guests"
-                                    min="1"
-                                    max="10"
-                                    placeholder="N° Personas"
-                                    value={formData.guests}
-                                    onChange={handleInputChange}
-                                    className="w-full px-4 py-4 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-primary text-white placeholder-slate-400"
-                                />
-                            )}
-
-                            <select
-                                name="attendance"
-                                value={formData.attendance}
+                                type="number"
+                                name="guests"
+                                min="1"
+                                max="10"
+                                placeholder="N° Personas"
+                                value={formData.guests}
                                 onChange={handleInputChange}
-                                className="w-full px-4 py-4 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-primary text-white [&>option]:text-slate-900"
-                            >
-                                <option value="si">¡Sí iré!</option>
-                                <option value="no">No podré :(</option>
-                            </select>
-                        </div>
+                                className="w-full px-4 py-4 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-primary text-white placeholder-slate-400"
+                            />
+                        )}
 
-                        <button
-                            type="submit"
-                            disabled={rsvpStatus === 'submitting'}
-                            className="w-full py-4 bg-primary hover:bg-primary-dark text-white rounded-xl font-bold tracking-wide transition-all transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70 flex items-center justify-center gap-2 shadow-lg"
+                        <select
+                            name="attendance"
+                            value={formData.attendance}
+                            onChange={handleInputChange}
+                            className="w-full px-4 py-4 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-primary text-white [&>option]:text-slate-900"
                         >
-                            {rsvpStatus === 'submitting' ? 'Enviando...' : (
-                                <>Confirmar por WhatsApp <i className="fab fa-whatsapp text-xl"></i></>
-                            )}
-                        </button>
-                    </form>
-                )}
+                            <option value="si">¡Sí iré!</option>
+                            <option value="no">No podré :(</option>
+                        </select>
+                    </div>
+
+                    <button
+                        type="submit"
+                        className="w-full py-4 bg-primary hover:bg-primary-dark text-white rounded-xl font-bold tracking-wide transition-all transform hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 shadow-lg"
+                    >
+                        Confirmar por WhatsApp <i className="fab fa-whatsapp text-xl"></i>
+                    </button>
+                </form>
             </div>
         </section>
     );
