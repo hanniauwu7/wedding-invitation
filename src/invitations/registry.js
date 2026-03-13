@@ -22,6 +22,12 @@ const invitations = [
     //     component: lazy(() => import('./maria-jose/index.jsx')),
     // },
 
+    {
+        slug: 'cumple-hannia',
+        title: 'Cumpleaños hannia',
+        component: lazy(() => import('./cumple-hannia/index.jsx')),
+    },
+
 ]
 
 export const getDefaultInvitation = () =>
