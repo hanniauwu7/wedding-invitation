@@ -1,2 +1,7 @@
 node_modules
 dist
+
+# ─── Admin Panel (local only, not for production) ───
+src/admin/
+src/templates/
+plugins/
