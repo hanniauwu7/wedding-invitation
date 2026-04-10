@@ -93,19 +93,8 @@ const InvitacionXV = () => {
                             alt={config.hero.subheading}
                             className="w-full h-auto object-cover aspect-[3/4] rounded-sm"
                         />
-                        <p className="text-center mt-3 font-vibes text-2xl text-xv-primary">{config.hero.subheading}</p>
+                        <p className="text-center mt-3 italic text-sm text-xv-gray leading-relaxed font-serif">"Hoy dejo atrás mi niñez y doy la bienvenida a una nueva etapa de mi vida"</p>
                     </div>
-                </div>
-            </section>
-
-            {/* --- FRASE 1 --- */}
-            <section className="py-10 px-6 bg-xv-cream">
-                <div className="max-w-md mx-auto text-center">
-                    <p className="text-xl md:text-2xl italic text-xv-gray leading-relaxed font-serif">
-                        <span className="text-3xl text-xv-accent/50 font-vibes">❝</span><br />
-                        Hoy dejo atrás mi niñez y doy la bienvenida a una nueva etapa de mi vida
-                        <br /><span className="text-3xl text-xv-accent/50 font-vibes">❞</span>
-                    </p>
                 </div>
             </section>
 
