@@ -10,6 +10,7 @@ export default {
                 serif: ['"Great Vibes"', 'cursive'],
                 montserrat: ["'Montserrat'", 'sans-serif'],
                 vibes: ["'Great Vibes'", 'cursive'],
+                dancing: ["'Dancing Script'", 'cursive'],
             },
             colors: {
                 // Original kassandra-brian colors (DO NOT REMOVE - production)

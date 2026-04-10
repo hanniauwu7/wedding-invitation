@@ -50,8 +50,13 @@ const InvitacionXV = () => {
                         {config.hero.heading}
                     </p>
 
-                    <h1 className="text-6xl md:text-8xl text-white tracking-wide drop-shadow-lg font-vibes">
-                        {config.hero.subheading}
+                    <h1 className="text-6xl md:text-8xl text-white tracking-wide drop-shadow-lg font-dancing">
+                        {config.hero.subheading.split(' ').map((word, i) => (
+                            <span key={i}>
+                                {i > 0 && ' '}
+                                <span className="text-[1.15em]">{word[0]}</span>{word.slice(1)}
+                            </span>
+                        ))}
                     </h1>
 
                     <div className="flex items-center justify-center gap-4 mt-2">
@@ -108,7 +113,7 @@ const InvitacionXV = () => {
                             <p className="text-xl md:text-2xl italic text-xv-gray leading-relaxed mt-8 font-serif">
                                 Con la bendición de Dios y de mis padres
                             </p>
-                            <p className="text-2xl md:text-3xl font-vibes text-xv-primary mt-2">
+                            <p className="text-2xl md:text-3xl font-dancing text-xv-primary mt-2">
                                 {config.parentsAndGodparents.parents.split(/\s+y\s+/).map((name, i, arr) => (
                                     <span key={i}>
                                         {name.trim()}
@@ -128,7 +133,7 @@ const InvitacionXV = () => {
                             <p className="text-xl md:text-2xl italic text-xv-gray leading-relaxed mt-6 font-serif">
                                 Y mis padrinos
                             </p>
-                            <p className="text-2xl md:text-3xl font-vibes text-xv-primary mt-2">
+                            <p className="text-2xl md:text-3xl font-dancing text-xv-primary mt-2">
                                 {config.parentsAndGodparents.godparents.split(/\s+y\s+/).map((name, i, arr) => (
                                     <span key={i}>
                                         {name.trim()}
@@ -142,7 +147,7 @@ const InvitacionXV = () => {
                     <p className="text-lg text-xv-text mt-8">
                         <strong>tienen el honor de invitarle a la celebración de mis XV años</strong>
                     </p>
-                    <h2 className="text-4xl md:text-5xl text-xv-primary mt-6 mb-4 font-vibes">
+                    <h2 className="text-4xl md:text-5xl text-xv-primary mt-6 mb-4 font-dancing">
                         {config.hero.subheading}
                     </h2>
 
@@ -158,7 +163,7 @@ const InvitacionXV = () => {
             {/* --- COUNTDOWN — Números elegantes serif --- */}
             <section className="py-20 px-4 bg-white">
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl font-vibes text-xv-primary mb-2">Faltan...</h2>
+                    <h2 className="text-3xl font-dancing text-xv-primary mb-2">Faltan...</h2>
                     <div className="mb-14"><Divider /></div>
                     <div className="flex flex-nowrap justify-center items-baseline gap-3 sm:gap-6 md:gap-12">
                         <CountdownElegant value={timeLeft.dias} label="Días" />
@@ -176,7 +181,7 @@ const InvitacionXV = () => {
             <section className="py-24 bg-xv-cream px-4">
                 <div className="max-w-5xl mx-auto">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl font-vibes text-xv-primary mb-4">Detalles del Evento</h2>
+                        <h2 className="text-3xl font-dancing text-xv-primary mb-4">Detalles del Evento</h2>
                         <Divider />
                     </div>
 
@@ -188,7 +193,7 @@ const InvitacionXV = () => {
                                         {event.icon === 'church' ? <Church className="w-8 h-8 text-xv-primary" /> : event.icon === 'party' ? <PartyPopper className="w-8 h-8 text-xv-primary" /> : <Sparkles className="w-8 h-8 text-xv-primary" />}
                                     </div>
                                 </div>
-                                <h3 className="text-xl font-vibes text-xv-dark mb-1">{event.title}</h3>
+                                <h3 className="text-xl font-dancing text-xv-dark mb-1">{event.title}</h3>
                                 <div className="space-y-2 mt-4">
                                     <p className="text-xv-text font-medium">{event.location}</p>
                                     {event.time && <p className="text-xv-primary font-medium mt-3">{event.time}</p>}
@@ -224,7 +229,7 @@ const InvitacionXV = () => {
                                     <HangerIcon className="w-7 h-7 text-xv-accent" />
                                 </div>
                             </div>
-                            <h3 className="text-xl font-vibes text-xv-dark mb-3">Código de Vestimenta</h3>
+                            <h3 className="text-xl font-dancing text-xv-dark mb-3">Código de Vestimenta</h3>
                             <p className="text-xv-text font-medium">{config.details.dressCode || "Formal"}</p>
                             <p className="text-base italic text-xv-gray mt-3 leading-relaxed font-serif">
                                 "La moda es lo que te ofrecen los diseñadores cuatro veces al año. Y el estilo es lo que tú eliges."
@@ -241,7 +246,7 @@ const InvitacionXV = () => {
             {/* --- FOOTER --- */}
             <footer className="py-12 text-center bg-white border-t border-xv-accent/20">
                 <Divider />
-                <p className="text-2xl text-xv-primary mt-4 mb-1 font-vibes">{config.footer.names || config.hero.subheading}</p>
+                <p className="text-2xl text-xv-primary mt-4 mb-1 font-dancing">{config.footer.names || config.hero.subheading}</p>
                 <p className="text-xv-gray text-sm tracking-widest uppercase">XV Años • {config.countdown.displayYear}</p>
                 <p className="text-xv-gray text-xs mt-4 italic">{config.footer.message || "Te esperamos con mucho cariño"}</p>
             </footer>
