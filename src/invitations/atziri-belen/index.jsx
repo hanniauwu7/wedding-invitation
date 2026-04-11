@@ -98,7 +98,7 @@ const InvitacionXV = () => {
                             alt={config.hero.subheading}
                             className="w-full h-auto object-cover aspect-[3/4] rounded-sm"
                         />
-                        <p className="text-center mt-3 italic text-sm text-xv-gray leading-relaxed font-serif">"Hoy dejo atrás mi niñez y doy la bienvenida a una nueva etapa de mi vida"</p>
+                        <p className="text-center mt-3 italic text-base md:text-lg text-xv-gray leading-relaxed font-serif">"Hoy dejo atrás mi niñez y doy la bienvenida a una nueva etapa de mi vida"</p>
                     </div>
                 </div>
             </section>
@@ -152,7 +152,7 @@ const InvitacionXV = () => {
                     </h2>
 
                     <div className="mt-12 pt-10 border-t border-xv-accent/15">
-                        <p className="text-lg md:text-xl italic text-xv-gray leading-relaxed font-serif max-w-lg mx-auto">
+                        <p className="text-xl md:text-2xl italic text-xv-dark/90 leading-relaxed font-serif max-w-lg mx-auto">
                             “La vida es un camino lleno de sorpresas y oportunidades, y hoy celebro mis quince años con la certeza de que lo mejor está por venir. Los espero para que juntos celebremos la vida y el amor”
                         </p>
                         
