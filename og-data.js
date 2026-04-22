@@ -21,4 +21,9 @@ export const ogData = {
         description: 'Estás invitado(a) a la celebración de mis XV años. ¡Toca aquí para ver la invitación!',
         image: '/invitations/atziri-belen/img/og-preview.jpg',
     },
+    'melani-marisol': {
+        title: 'Mis XV Años — Melani Marisol 🐸✨',
+        description: 'Estás cordialmente invitado(a) a celebrar mis XV años. ¡Toca aquí para ver la invitación!',
+        image: '/invitations/melani-marisol/img/og-preview.jpg',
+    },
 }

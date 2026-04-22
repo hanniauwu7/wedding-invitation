@@ -1,8 +1,9 @@
 import React from 'react';
+import { Church, PartyPopper } from 'lucide-react';
 
 const itineraryItems = [
-    { time: '7:00 PM', event: 'Ceremonia Religiosa', icon: '⛪', description: 'Santa María Estrella de la Evangelización' },
-    { time: '7:00 PM', event: 'Recepción', icon: '🎉', description: 'Quinta Sarai' },
+    { time: '7:00 PM', event: 'Ceremonia Religiosa', icon: <Church className="w-5 h-5 text-white" />, description: 'Santa María Estrella de la Evangelización' },
+    { time: '7:00 PM', event: 'Recepción', icon: <PartyPopper className="w-5 h-5 text-white" />, description: 'Quinta Sarai' },
 ];
 
 const Itinerary = () => {
