@@ -70,10 +70,7 @@ const EventCard = ({ icon, title, location, address, time, link }) => (
         <h3 className="text-lg uppercase tracking-widest text-rana-dark font-semibold mb-3">{title}</h3>
         <p className="text-rana-primary font-semibold text-sm mb-1">{location}</p>
         <p className="text-rana-gray text-xs mb-2">{address}</p>
-        <div className="flex items-center justify-center gap-2 my-3">
-            <div className="w-6 h-[1px] bg-rana-accent" />
-            <div className="w-6 h-[1px] bg-rana-accent" />
-        </div>
+        <div className="w-16 h-[1px] bg-rana-accent/60 mx-auto my-4" />
         <p className="text-rana-dark font-bold text-xl mb-6">{time}</p>
 
         <a
