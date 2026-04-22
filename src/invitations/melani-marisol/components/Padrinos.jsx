@@ -24,6 +24,12 @@ const Padrinos = () => {
                 className="absolute -top-2 -right-2 w-24 md:w-32 opacity-[0.06] pointer-events-none select-none"
                 style={{ filter: 'invert(1) sepia(0.3) hue-rotate(80deg)', transform: 'scaleX(-1)' }}
             />
+            {/* Tiana sketch illustration */}
+            <img
+                src="/invitations/melani-marisol/img/tiana-sketch.png"
+                alt=""
+                className="absolute top-1/2 right-0 -translate-y-1/2 w-64 md:w-80 opacity-80 pointer-events-none select-none drop-shadow-2xl"
+            />
 
             <div className="max-w-2xl mx-auto relative z-10">
                 <p className="text-rana-firefly/80 text-sm uppercase tracking-[0.3em] mb-3">Con el cariño de</p>

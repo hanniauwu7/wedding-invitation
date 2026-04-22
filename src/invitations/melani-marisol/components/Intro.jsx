@@ -18,6 +18,14 @@ const Intro = () => {
                 style={{ filter: 'sepia(0.5) hue-rotate(100deg)' }}
             />
 
+            {/* Colored Frog Illustration */}
+            <img
+                src="/invitations/melani-marisol/img/rana.png"
+                alt="Rana"
+                className="absolute top-1/2 left-4 w-20 md:w-28 z-20 drop-shadow-xl pointer-events-none -translate-y-1/2"
+                style={{ animation: 'float 4s ease-in-out infinite' }}
+            />
+
             <div className="max-w-2xl mx-auto relative z-10">
 
                 <p className="text-rana-gray text-sm uppercase tracking-[0.3em] mb-4">Con la bendición de Dios y de mis papás</p>
@@ -47,8 +55,20 @@ const Intro = () => {
                     <div className="w-12 h-[1px] bg-rana-accent/60" />
                 </div>
             </div>
-        </section>
+    </section>
     );
 };
 
 export default Intro;
+
+const style = document.createElement('style');
+style.innerHTML = `
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
+}
+`;
+if (typeof document !== 'undefined') {
+    document.head.appendChild(style);
+}

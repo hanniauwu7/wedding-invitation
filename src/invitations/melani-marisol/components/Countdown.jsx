@@ -56,6 +56,14 @@ const Countdown = () => {
                 />
             </div>
 
+            {/* Colored Frog Illustration */}
+            <img
+                src="/invitations/melani-marisol/img/rana.png"
+                alt="Rana"
+                className="absolute bottom-4 md:bottom-10 right-4 w-24 md:w-32 z-20 drop-shadow-xl pointer-events-none"
+                style={{ animation: 'float 4s ease-in-out infinite' }}
+            />
+
             <div className="max-w-4xl mx-auto relative z-10">
                 <p className="text-sm uppercase tracking-[0.3em] text-rana-gray mb-2">Faltan</p>
                 <h2 className="text-4xl md:text-5xl font-serif text-rana-primary mb-12">
@@ -96,3 +104,16 @@ const TimerBox = ({ value, label }) => (
 );
 
 export default Countdown;
+
+// Agregando la animación globalmente al documento o localmente
+const style = document.createElement('style');
+style.innerHTML = `
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+`;
+if (typeof document !== 'undefined') {
+    document.head.appendChild(style);
+}

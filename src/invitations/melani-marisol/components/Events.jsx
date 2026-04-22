@@ -21,6 +21,21 @@ const Events = () => {
                     style={{ filter: 'sepia(0.5) hue-rotate(100deg)' }}
                 />
             </div>
+
+            {/* Animated Colored Images */}
+            <img
+                src="/invitations/melani-marisol/img/luciernaga.png"
+                alt="Luciérnaga"
+                className="absolute top-12 left-8 md:left-20 w-12 md:w-16 z-20 drop-shadow-lg pointer-events-none"
+                style={{ animation: 'float 3.5s ease-in-out infinite' }}
+            />
+            <img
+                src="/invitations/melani-marisol/img/rana.png"
+                alt="Rana"
+                className="absolute -bottom-4 right-1/2 translate-x-1/2 md:translate-x-0 md:right-10 w-20 md:w-28 z-20 drop-shadow-xl pointer-events-none"
+                style={{ animation: 'float 4s ease-in-out infinite 1s' }}
+            />
+
             <div className="max-w-4xl mx-auto relative z-10">
                 <div className="text-center mb-12">
                     <p className="text-sm uppercase tracking-[0.3em] text-rana-gray mb-2">Te esperamos en</p>
@@ -42,7 +57,7 @@ const Events = () => {
                         title="Recepción"
                         location="Quinta Sarai"
                         address="Av. Siglo XXI KM 3.5"
-                        time="7:00 PM"
+                        time="8:00 PM"
                         link="https://maps.app.goo.gl/YEdgpgBVP1a6hrjU8"
                     />
                 </div>
@@ -80,3 +95,15 @@ const EventCard = ({ icon, title, location, address, time, link }) => (
 );
 
 export default Events;
+
+const style = document.createElement('style');
+style.innerHTML = `
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
+}
+`;
+if (typeof document !== 'undefined') {
+    document.head.appendChild(style);
+}

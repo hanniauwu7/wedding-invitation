@@ -1,9 +1,11 @@
 import React from 'react';
-import { Church, PartyPopper } from 'lucide-react';
+import { Church, PartyPopper, Music, UtensilsCrossed } from 'lucide-react';
 
 const itineraryItems = [
     { time: '7:00 PM', event: 'Ceremonia Religiosa', icon: <Church className="w-5 h-5 text-white" />, description: 'Santa María Estrella de la Evangelización' },
     { time: '7:00 PM', event: 'Recepción', icon: <PartyPopper className="w-6 h-6 text-white" strokeWidth={2.5} />, description: 'Quinta Sarai' },
+    { time: '8:30 PM', event: 'Vals', icon: <Music className="w-5 h-5 text-white" />, description: 'Momento Especial' },
+    { time: '9:00 PM', event: 'Cena', icon: <UtensilsCrossed className="w-5 h-5 text-white" />, description: 'Banquete en Quinta Sarai' },
 ];
 
 const Itinerary = () => {
@@ -40,6 +42,22 @@ const Itinerary = () => {
                 alt=""
                 className="absolute -top-6 -left-6 w-36 md:w-44 opacity-[0.05] pointer-events-none select-none"
                 style={{ filter: 'invert(1) sepia(0.3) hue-rotate(80deg)' }}
+            />
+
+            {/* Colored Firefly Illustration */}
+            <img
+                src="/invitations/melani-marisol/img/luciernaga.png"
+                alt="Luciérnaga"
+                className="absolute top-1/4 right-8 w-10 md:w-14 z-20 drop-shadow-xl pointer-events-none"
+                style={{ animation: 'firefly 5s ease-in-out infinite' }}
+            />
+
+            {/* Tiana sketch illustration (Left Side) */}
+            <img
+                src="/invitations/melani-marisol/img/tiana-sketch.png"
+                alt=""
+                className="absolute bottom-10 -left-10 w-64 md:w-80 opacity-70 pointer-events-none select-none drop-shadow-2xl"
+                style={{ transform: 'scaleX(-1)' }}
             />
 
             <div className="max-w-md mx-auto relative z-10">

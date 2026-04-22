@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const initialPhotos = [
-    { src: "/invitations/melani-marisol/img/img1.jpg", caption: "Mi princesa" },
+    { src: "/invitations/melani-marisol/img/img1.jpg", caption: "La Princesa" },
     { src: "/invitations/melani-marisol/img/img2.jpg", caption: "Mis XV" },
     { src: "/invitations/melani-marisol/img/img3.jpg", caption: "En familia" },
     { src: "/invitations/melani-marisol/img/img4.jpg", caption: "¡Feliz!" },
