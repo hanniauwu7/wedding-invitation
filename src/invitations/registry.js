@@ -25,6 +25,12 @@ const invitations = [
         component: lazy(() => import('./atziri-belen/index.jsx')),
         enabled: false, // cambiar a true para activar
     },
+    {
+        slug: 'melani-marisol',
+        title: 'XV Años | Melani Marisol',
+        component: lazy(() => import('./melani-marisol/index.jsx')),
+        enabled: true,
+    },
 ]
 
 // Solo invitaciones activas
