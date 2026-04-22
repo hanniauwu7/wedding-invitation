@@ -29,11 +29,14 @@ const Gifts = () => {
                 </p>
 
                 <div className="bg-gradient-to-br from-rana-cream to-rana-light p-8 rounded-3xl border border-rana-lily/50 max-w-md mx-auto shadow-sm">
-                    <div className="flex justify-center">
+                    <div className="flex flex-col items-center justify-center gap-4">
                         <div className="inline-flex items-center gap-2 bg-rana-primary text-white px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wide shadow-md">
                             <span>💌</span>
                             <span>Opción en mesa: Lluvia de Sobres</span>
                         </div>
+                        <p className="text-rana-gray text-sm leading-relaxed text-center mt-2 px-2">
+                            Es una tradición de ahora regalar efectivo en sobres que estarán a la entrada de la fiesta para colocarse en un buzón.
+                        </p>
                     </div>
                 </div>
             </div>
