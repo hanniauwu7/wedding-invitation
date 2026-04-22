@@ -6,13 +6,6 @@ const Events = () => {
         <section className="relative py-16 px-6 bg-rana-cream overflow-hidden">
             {/* Contenedor de marcas de agua */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
-                {/* Princess silhouette watermark */}
-                <img
-                    src="/invitations/melani-marisol/img/princess-silhouette.png"
-                    alt=""
-                    className="absolute -bottom-6 -left-4 w-44 md:w-52 opacity-[0.05] select-none"
-                    style={{ filter: 'sepia(0.5) hue-rotate(100deg)', transform: 'scaleX(-1)' }}
-                />
                 {/* Frog silhouette watermark */}
                 <img
                     src="/invitations/melani-marisol/img/frog-silhouette.png"
