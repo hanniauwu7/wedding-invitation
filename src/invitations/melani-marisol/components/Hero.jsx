@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
+import { Play, Pause, Volume2, VolumeX, ChevronDown } from 'lucide-react';
 
 const Hero = () => {
     const audioRef = useRef(null);
@@ -175,6 +175,12 @@ const Hero = () => {
                 <button onClick={toggleMute} className="text-rana-lily/60 hover:text-white transition-colors">
                     {isMuted ? <VolumeX size={16} /> : <Volume2 size={16} />}
                 </button>
+            </div>
+
+            {/* Scroll Indicator */}
+            <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-1 animate-bounce z-20 text-rana-lily/80">
+                <span className="text-xs uppercase tracking-[0.2em] font-light">Desliza</span>
+                <ChevronDown size={24} />
             </div>
 
             {/* CSS Animations */}
