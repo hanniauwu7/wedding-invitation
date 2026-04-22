@@ -106,7 +106,7 @@ const RSVP = () => {
                 <div className="mt-8 text-center">
                     <p className="text-rana-lily/50 text-sm mb-3">¿Quieres enviarle un mensaje a la festejada?</p>
                     <a
-                        href="https://wa.me/524495915005"
+                        href={`https://wa.me/524495915005?text=${encodeURIComponent('¡Felices XV años Melani! Te deseo lo mejor en tu día. 🎉👑')}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-rana-accent hover:text-rana-firefly transition-colors text-sm font-medium"
