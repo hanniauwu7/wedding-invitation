@@ -26,8 +26,6 @@ const invitations = [
         enabled: true,
     },
 
-    
-
 ]
 
 // Solo invitaciones activas

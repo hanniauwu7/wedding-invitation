@@ -1,45 +1,41 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 
 /**
  * Hook reutilizable para cuenta regresiva.
- * @param {string} targetDateTime - Fecha/hora objetivo en formato ISO string.
- * @returns {{ dias, horas, minutos, segundos, isExpired }}
+ * @param {string} targetDate - Fecha objetivo en formato ISO (e.g. "2026-05-02T19:00:00")
+ * @returns {{ days, hours, minutes, seconds, isTime }}
  */
-export function useCountdown(targetDateTime) {
-    const [timeLeft, setTimeLeft] = useState({ dias: 0, horas: 0, minutos: 0, segundos: 0 })
-    const [isExpired, setIsExpired] = useState(false)
+export default function useCountdown(targetDate) {
+    const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+    const [isTime, setIsTime] = useState(false);
 
     useEffect(() => {
-        if (!targetDateTime) return
+        if (!targetDate) return;
 
-        const eventDate = new Date(targetDateTime).getTime()
+        const eventDate = new Date(targetDate).getTime();
 
-        const update = () => {
-            const now = new Date().getTime()
-            const distance = eventDate - now
+        const updateTimer = () => {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
 
             if (distance < 0) {
-                setIsExpired(true)
-                setTimeLeft({ dias: 0, horas: 0, minutos: 0, segundos: 0 })
-                return false // signal to clear interval
+                setIsTime(true);
+            } else {
+                setTimeLeft({
+                    days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+                    hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+                    minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+                    seconds: Math.floor((distance % (1000 * 60)) / 1000),
+                });
             }
+        };
 
-            setTimeLeft({
-                dias: Math.floor(distance / (1000 * 60 * 60 * 24)),
-                horas: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-                minutos: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-                segundos: Math.floor((distance % (1000 * 60)) / 1000),
-            })
-            return true // keep running
-        }
+        updateTimer();
+        const interval = setInterval(updateTimer, 1000);
+        return () => clearInterval(interval);
+    }, [targetDate]);
 
-        update() // initial call
-        const timer = setInterval(() => {
-            if (!update()) clearInterval(timer)
-        }, 1000)
-
-        return () => clearInterval(timer)
-    }, [targetDateTime])
-
-    return { ...timeLeft, isExpired }
+    return { ...timeLeft, isTime };
 }
+
+export { useCountdown };

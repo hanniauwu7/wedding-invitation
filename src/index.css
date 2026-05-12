@@ -1,19 +1,6 @@
 @import "tailwindcss";
-@source "./templates";
 @source "./admin";
 @config "../tailwind.config.js";
-
-:root {
-    /* Fallback default theme (Sage/Boda defaults) - RGB space separated */
-    --t-primary: 93 124 137;
-    --t-accent: 203 213 225;
-    --t-light: 248 250 252;
-    --t-cream: 255 255 255;
-    --t-dark: 14 16 56;
-    --t-text: 30 41 59;
-    --t-gray: 100 116 139;
-    --t-font: 'Great Vibes', cursive;
-}
 
 *,
 *::before,
@@ -42,9 +29,6 @@ img {
 
 /* ====================================
    Animaciones Globales
-   Nota: fadeIn también está definido en tailwind.config.js para
-   que Tailwind genere la clase `animate-fade-in`.
-   Esta definición aplica a `.animate-fade-in` directamente en CSS.
    ==================================== */
 
 @keyframes fadeIn {
@@ -81,6 +65,16 @@ img {
 .animate-pulse-soft { animation: pulse-soft 2.5s infinite ease-in-out; }
 
 /* ====================================
+   Animación Float — Usada por múltiples componentes
+   (Previamente inyectada via document.createElement('style'))
+   ==================================== */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50%      { transform: translateY(-12px); }
+}
+.animate-float { animation: float 3s ease-in-out infinite; }
+
+/* ====================================
    Custom Scrollbar
    ==================================== */
 ::-webkit-scrollbar       { width: 8px; }
@@ -92,7 +86,7 @@ img {
 .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
 /* ====================================
-   Polaroid Gallery (Invitación Kassandra-Brian y Boda genérica)
+   Polaroid Gallery (Invitaciones Custom)
    ==================================== */
 .polaroid-stack-container {
     position: relative; width: 280px; height: 360px; margin: 0 auto;
@@ -119,56 +113,3 @@ img {
 .polaroid-card:nth-child(even) { transform: rotate(-2deg); }
 .polaroid-card.fly-out          { transform: translate(-150%, -20%) rotate(-30deg) !important; opacity: 0; pointer-events: none; }
 .polaroid-card.reset-position  { transform: translate(0, 0) scale(0.9) !important; opacity: 0; z-index: -1; transition: none; }
-
-/* ====================================
-   Countdown Circles (Template Boda genérica)
-   ==================================== */
-.countdown-circle {
-    width: 72px; height: 72px; border-radius: 50%;
-    display: flex; flex-direction: column; justify-content: center; align-items: center;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;
-}
-.countdown-circle:hover { transform: scale(1.05); }
-
-/* ====================================
-   Gallery — Horizontal Snap Scroll (Template XV)
-   ==================================== */
-.gallery-scroll {
-    display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory;
-    padding: 1rem 2rem 2rem; -ms-overflow-style: none; scrollbar-width: none;
-}
-.gallery-scroll::-webkit-scrollbar { display: none; }
-.gallery-scroll-card {
-    flex: 0 0 280px; height: 380px; border-radius: 1.25rem; overflow: hidden;
-    position: relative; scroll-snap-align: center;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-.gallery-scroll-card:hover { transform: scale(1.03); box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15); }
-.gallery-scroll-card img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s; }
-.gallery-scroll-card:hover img { opacity: 0.9; }
-.gallery-scroll-card .overlay {
-    position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
-    color: white; font-family: 'Great Vibes', cursive; font-size: 1.4rem;
-    opacity: 0; transform: translateY(10px); transition: opacity 0.3s, transform 0.3s;
-}
-.gallery-scroll-card:hover .overlay { opacity: 1; transform: translateY(0); }
-
-/* ====================================
-   Gallery — 2×2 Grid (Template Bautizo)
-   ==================================== */
-.gallery-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
-    max-width: 420px; margin: 0 auto; padding: 0 1rem;
-}
-.gallery-grid-card {
-    border-radius: 1rem; overflow: hidden; aspect-ratio: 1; position: relative;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-.gallery-grid-card:hover { transform: scale(1.04); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); z-index: 2; }
-.gallery-grid-card img { width: 100%; height: 100%; object-fit: cover; }
-.gallery-grid-card .label {
-    position: absolute; bottom: 0.5rem; left: 0.5rem; padding: 0.25rem 0.75rem;
-    border-radius: 999px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.05em;
-    backdrop-filter: blur(8px);
-}

@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import { Play, Pause, Volume2, VolumeX, ChevronDown } from 'lucide-react';
 
-const Hero = () => {
+const Hero = ({ data, basePath }) => {
     const audioRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
     const [isMuted, setIsMuted] = useState(false);
@@ -40,13 +40,13 @@ const Hero = () => {
             {/* Background Image with Magic Overlay */}
             <div className="absolute inset-0 z-0 will-change-transform">
                 <img
-                    src="/invitations/melani-marisol/img/hero-bg.png"
+                    src={`${basePath}/img/${data.backgroundImage}`}
                     alt="Fondo mágico La Princesa y el Sapo"
                     loading="eager"
                     decoding="async"
                     className="w-full h-full object-cover transform-gpu"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-rana-dark/90 via-rana-dark/40 to-rana-primary/20" />
+                <div className="absolute inset-0 bg-gradient-to-t from-inv-dark/90 via-inv-dark/40 to-inv-primary/20" />
             </div>
 
             {/* Floating Fireflies Animation */}
@@ -54,13 +54,13 @@ const Hero = () => {
                 {[...Array(15)].map((_, i) => (
                     <div
                         key={i}
-                        className="absolute rounded-full bg-rana-firefly"
+                        className="absolute rounded-full bg-inv-firefly"
                         style={{
-                            width: `${Math.random() * 6 + 3}px`,
-                            height: `${Math.random() * 6 + 3}px`,
-                            left: `${Math.random() * 100}%`,
-                            top: `${Math.random() * 100}%`,
-                            animation: `firefly ${Math.random() * 4 + 3}s ease-in-out ${Math.random() * 2}s infinite alternate`,
+                            width: `${4 + (i % 5)}px`,
+                            height: `${4 + (i % 5)}px`,
+                            left: `${(i * 7 + 5) % 100}%`,
+                            top: `${(i * 13 + 10) % 100}%`,
+                            animation: `firefly ${3 + (i % 4)}s ease-in-out ${(i % 3) * 0.7}s infinite alternate`,
                             boxShadow: '0 0 8px 3px rgba(255, 245, 157, 0.6)',
                         }}
                     />
@@ -117,14 +117,14 @@ const Hero = () => {
                     </svg>
                 </div>
 
-                <p className="text-sm md:text-base uppercase tracking-[0.4em] font-light text-rana-firefly">
-                    ✨ Mis XV Años ✨
+                <p className="text-sm md:text-base uppercase tracking-[0.4em] font-light text-inv-firefly">
+                    {data.subtitle}
                 </p>
-                <h1 className="font-serif text-5xl sm:text-6xl md:text-8xl drop-shadow-lg leading-tight text-white" style={{ textShadow: '0 0 30px rgba(255, 215, 0, 0.4)' }}>
-                    Melani Marisol
+                <h1 className="font-inv-display text-5xl sm:text-6xl md:text-8xl drop-shadow-lg leading-tight text-white" style={{ textShadow: '0 0 30px rgba(255, 215, 0, 0.4)' }}>
+                    {data.name}
                 </h1>
                 <div className="flex items-center justify-center gap-4 mt-2">
-                    <div className="w-16 h-[1px] bg-rana-accent/60" />
+                    <div className="w-16 h-[1px] bg-inv-accent/60" />
                     {/* Small lotus divider */}
                     <svg
                         width="28"
@@ -142,43 +142,46 @@ const Hero = () => {
                         <path d="M30 55C20 72 18 88 28 100C34 107 44 110 58 108C55 98 46 84 38 72C33 65 30 58 30 55Z" fill="#C9B896" opacity="0.6"/>
                         <path d="M170 55C180 72 182 88 172 100C166 107 156 110 142 108C145 98 154 84 162 72C167 65 170 58 170 55Z" fill="#C9B896" opacity="0.6"/>
                     </svg>
-                    <div className="w-16 h-[1px] bg-rana-accent/60" />
+                    <div className="w-16 h-[1px] bg-inv-accent/60" />
                 </div>
-                <p className="text-base md:text-lg tracking-[0.2em] font-light text-rana-lily">
-                    2 DE MAYO 2026
+                <p className="text-base md:text-lg tracking-[0.2em] font-light text-inv-lily">
+                    {data.date}
                 </p>
             </div>
 
             {/* Audio Player - themed */}
-            <audio
-                id="melaniAudio"
-                loop
-                ref={audioRef}
-                onTimeUpdate={handleTimeUpdate}
-            >
-                {/* Aquí se agregará el audio La Princesa y El Sapo */}
-                <source src="/invitations/melani-marisol/audio/Ma-Belle-Evangeline.mp3" type="audio/mpeg" />
-            </audio>
+            {data.song && (
+                <>
+                    <audio
+                        id="invitationAudio"
+                        loop
+                        ref={audioRef}
+                        onTimeUpdate={handleTimeUpdate}
+                    >
+                        <source src={`${basePath}/audio/${data.song}`} type="audio/mpeg" />
+                    </audio>
 
-            <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 w-[90%] max-w-md bg-rana-dark/90 backdrop-blur-md rounded-full px-6 py-3 shadow-lg flex items-center gap-4 z-20 border border-rana-accent/30">
-                <button onClick={toggleMusic} className="text-rana-accent hover:text-white transition-colors">
-                    {isPlaying ? <Pause size={20} fill="currentColor" /> : <Play size={20} fill="currentColor" />}
-                </button>
+                    <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 w-[90%] max-w-md bg-inv-dark/90 backdrop-blur-md rounded-full px-6 py-3 shadow-lg flex items-center gap-4 z-20 border border-inv-accent/30">
+                        <button onClick={toggleMusic} className="text-inv-accent hover:text-white transition-colors">
+                            {isPlaying ? <Pause size={20} fill="currentColor" /> : <Play size={20} fill="currentColor" />}
+                        </button>
 
-                <div className="flex-1 h-1 bg-rana-primary/40 rounded-full overflow-hidden">
-                    <div
-                        className="h-full bg-gradient-to-r from-rana-accent to-rana-firefly transition-all duration-100 ease-linear"
-                        style={{ width: `${progress}%` }}
-                    />
-                </div>
+                        <div className="flex-1 h-1 bg-inv-primary/40 rounded-full overflow-hidden">
+                            <div
+                                className="h-full bg-gradient-to-r from-inv-accent to-inv-firefly transition-all duration-100 ease-linear"
+                                style={{ width: `${progress}%` }}
+                            />
+                        </div>
 
-                <button onClick={toggleMute} className="text-rana-lily/60 hover:text-white transition-colors">
-                    {isMuted ? <VolumeX size={16} /> : <Volume2 size={16} />}
-                </button>
-            </div>
+                        <button onClick={toggleMute} className="text-inv-lily/60 hover:text-white transition-colors">
+                            {isMuted ? <VolumeX size={16} /> : <Volume2 size={16} />}
+                        </button>
+                    </div>
+                </>
+            )}
 
             {/* Scroll Indicator */}
-            <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-1 animate-bounce z-20 text-rana-lily/80">
+            <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-1 animate-bounce z-20 text-inv-lily/80">
                 <span className="text-xs uppercase tracking-[0.2em] font-light">Desliza</span>
                 <ChevronDown size={24} />
             </div>
@@ -187,8 +190,8 @@ const Hero = () => {
             <style>{`
                 @keyframes firefly {
                     0% { opacity: 0.2; transform: translate(0, 0) scale(0.8); }
-                    50% { opacity: 1; transform: translate(${Math.random() > 0.5 ? '' : '-'}15px, -20px) scale(1.2); }
-                    100% { opacity: 0.3; transform: translate(${Math.random() > 0.5 ? '' : '-'}30px, 10px) scale(0.9); }
+                    50% { opacity: 1; transform: translate(15px, -20px) scale(1.2); }
+                    100% { opacity: 0.3; transform: translate(-30px, 10px) scale(0.9); }
                 }
             `}</style>
         </header>
