@@ -2,6 +2,10 @@
     "slug": "despedida-kass-brian",
     "eventType": "despedida",
     "title": "Despedida de Solteros | Kass & Brian",
+    "seo": {
+        "description": "¡Estás invitad@ a nuestra Despedida de Solteros! 🎉 Kass & Brian — 16 de mayo 2026. ¡No faltes!",
+        "shareImage": "share-preview.png"
+    },
     "theme": {
         "primaryHue": 215,
         "primarySat": 75,
