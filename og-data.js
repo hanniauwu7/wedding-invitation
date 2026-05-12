@@ -26,4 +26,9 @@ export const ogData = {
         description: 'Estás cordialmente invitado(a) a celebrar mis XV años. ¡Toca aquí para ver la invitación!',
         image: '/invitations/melani-marisol/img/og-preview-v5.jpg',
     },
+    'despedida-kass-brian': {
+        title: 'Despedida de Solteros | Kass & Brian 🎉',
+        description: '¡Estás invitad@ a nuestra Despedida de Solteros! 16 de mayo 2026. ¡No faltes!',
+        image: '/invitations/despedida-kass-brian/img/share-preview.png',
+    },
 }
