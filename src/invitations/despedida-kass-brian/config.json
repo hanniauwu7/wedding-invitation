@@ -1,0 +1,96 @@
+{
+    "slug": "despedida-kass-brian",
+    "eventType": "despedida",
+    "title": "Despedida de Solteros | Kass & Brian",
+    "theme": {
+        "primaryHue": 215,
+        "primarySat": 75,
+        "accentHue": 195,
+        "fontBody": "Quicksand",
+        "fontDisplay": "Caveat"
+    },
+    "hero": {
+        "subtitle": "¡Despedida de Solteros!",
+        "name": "Kass & Brian",
+        "date": "16 DE MAYO DE 2026",
+        "backgroundImage": "hero-pareja.png",
+        "song": ""
+    },
+    "intro": {
+        "message": "Estamos a un paso del altar y queremos festejarlo contigo.",
+        "label": "Te invitamos a nuestra",
+        "parent1": "",
+        "parent2": "",
+        "closingMessage": "Despedida Mixta"
+    },
+    "padrinos": {
+        "enabled": false,
+        "label": "",
+        "subtitle": "",
+        "padrino1": "",
+        "padrino2": ""
+    },
+    "countdown": {
+        "targetDate": "2026-05-16T19:00:00",
+        "displayDate": "sábado, 16 de mayo",
+        "displayYear": "2026"
+    },
+    "calendar": {
+        "title": "Despedida de Kass & Brian",
+        "description": "¡Ven a celebrar con nosotros nuestra despedida de solteros!",
+        "location": "Casa de Rebeca",
+        "startDateTime": "20260516T180000",
+        "endDateTime": "20260516T235900",
+        "outlookStart": "2026-05-16T18:00:00",
+        "outlookEnd": "2026-05-16T23:59:00",
+        "icsFilename": "despedida-kass-brian.ics",
+        "icsProdId": "Despedida | Kass & Brian"
+    },
+    "events": [
+        {
+            "icon": "party",
+            "title": "Casa de Rebeca",
+            "location": "",
+            "address": "Juan Balderas #308, Soberana Convención",
+            "time": "19:00",
+            "mapLink": "https://maps.app.goo.gl/ikDejXUNEi87Dd1B8"
+        }
+    ],
+    "dressCode": {
+        "enabled": true,
+        "type": "Casual y Cómodo",
+        "image": ""
+    },
+    "gallery": {
+        "photos": []
+    },
+    "gifts": {
+        "enabled": true,
+        "title": "Lluvia de Regalos",
+        "message": "Nuestra temática será de productos de despensa y limpieza para nuestro nuevo hogar. ¡Cualquier detalle será muy útil!",
+        "type": "none",
+        "envelopeText": "",
+        "envelopeDescription": "",
+        "link": "",
+        "linkText": ""
+    },
+    "itinerary": {
+        "enabled": false,
+        "items": []
+    },
+    "rsvp": {
+        "mode": "whatsapp",
+        "whatsappNumber": "524491234567",
+        "whatsappConfirmMessage": "¡Hola! Soy {name}. Confirmo mi asistencia a la despedida para {guests} persona(s). 🎉",
+        "whatsappDeclineMessage": "Hola! Soy {name}. Lamentablemente no podré asistir a la despedida.",
+        "deadline": "Por favor confirma tu asistencia a más tardar el 1 de mayo",
+        "directMessage": {
+            "enabled": false
+        }
+    },
+    "footer": {
+        "name": "Kass & Brian",
+        "subtitle": "Despedida de Solteros • sábado, 16 de mayo"
+    },
+    "rsvpKey": "syrkn7"
+}

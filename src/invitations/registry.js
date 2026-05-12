@@ -26,6 +26,13 @@ const invitations = [
         enabled: true,
     },
 
+    {
+        slug: 'despedida-kass-brian',
+        title: 'Celebración | despedida-kass-brian',
+        component: lazy(() => import('./despedida-kass-brian/index.jsx')),
+        enabled: true,
+    },
+
 ]
 
 // Solo invitaciones activas

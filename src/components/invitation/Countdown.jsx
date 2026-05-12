@@ -9,7 +9,6 @@ const Countdown = ({ data, calendar, basePath }) => {
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
             </div>
             <div className="max-w-4xl mx-auto relative z-10">
-                <p className="text-sm uppercase tracking-[0.3em] text-inv-gray mb-2">Faltan</p>
                 <h2 className="text-4xl md:text-5xl font-inv-display text-inv-primary mb-12">{isTime ? "¡Es Hoy!" : "¡Falta Poco!"}</h2>
                 {!isTime && (
                     <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-10">

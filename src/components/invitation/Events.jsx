@@ -8,8 +8,7 @@ const Events = ({ data, basePath }) => {
 
             <div className="max-w-4xl mx-auto relative z-10">
                 <div className="text-center mb-12">
-                    <p className="text-sm uppercase tracking-[0.3em] text-inv-gray mb-2">Te esperamos en</p>
-                    <h2 className="text-4xl md:text-5xl font-inv-display text-inv-primary">Mis Eventos</h2>
+                    <h2 className="text-4xl md:text-5xl font-inv-display text-inv-primary">Te esperamos en:</h2>
                 </div>
                 <div className="flex flex-col md:flex-row justify-center items-stretch gap-8">
                     {data.map((event, i) => (
