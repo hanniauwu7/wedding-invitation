@@ -34,6 +34,6 @@ export const ogData = {
     'isabella': {
         title: 'Primera Comunión | Isabella 🕊️',
         description: 'Te invito a celebrar mi Primera Comunión. ¡Toca aquí para confirmar tu asistencia!',
-        image: '/invitations/isabella/img/og-preview.jpg',
+        image: '/invitations/isabella/img/og-preview.png',
     },
 }
