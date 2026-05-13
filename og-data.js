@@ -31,4 +31,9 @@ export const ogData = {
         description: '¡Estás invitad@ a nuestra Despedida de Solteros! 16 de mayo 2026. ¡No faltes!',
         image: '/invitations/despedida-kass-brian/img/share-preview.png',
     },
+    'isabella': {
+        title: 'Primera Comunión | Isabella 🕊️',
+        description: 'Te invito a celebrar mi Primera Comunión. ¡Toca aquí para confirmar tu asistencia!',
+        image: '/invitations/isabella/img/og-preview.jpg',
+    },
 }
