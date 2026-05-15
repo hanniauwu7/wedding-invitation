@@ -10,7 +10,7 @@
         "fontDisplay": "Cormorant Garamond"
     },
     "hero": {
-        "subtitle": "Nuestra Primera Comunión",
+        "subtitle": "Primera Comunión",
         "name": "Isabella, Alexa y Santiago",
         "date": "27 DE JUNIO DE 2026",
         "backgroundImage": "hero.png",
@@ -48,7 +48,7 @@
     },
     "padrinos3": {
         "enabled": true,
-        "label": "Madrina de Santiago",
+        "label": "Padrinos de Santiago",
         
         "padrino1": "Karen Amador"
         
