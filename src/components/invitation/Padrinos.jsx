@@ -30,25 +30,37 @@ const Padrinos = ({ data, basePath }) => {
                 <div className="bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-lg rounded-3xl p-5 md:p-10 border border-white/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.1)] relative overflow-hidden">
                     {/* Inner highlight for glass effect */}
                     <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent opacity-30 pointer-events-none rounded-3xl"></div>
-                    <div className="flex items-center justify-center gap-2 mb-2 md:mb-4">
-                        <span className="text-inv-accent text-xl md:text-2xl">✦</span>
-                    </div>
+                    
+                    {(data.groups || [{ padrino1: data.padrino1, padrino2: data.padrino2 }]).map((group, index) => (
+                        <div key={index} className={`relative z-10 ${index > 0 ? 'mt-8 pt-8 border-t border-white/20' : ''}`}>
+                            {group.label && (
+                                <h3 className="text-white/90 font-inv-display text-2xl md:text-3xl mb-4 tracking-widest">{group.label}</h3>
+                            )}
+                            <div className="flex items-center justify-center gap-2 mb-2 md:mb-4">
+                                <span className="text-inv-accent text-xl md:text-2xl">✦</span>
+                            </div>
 
-                    <p className="font-inv-display text-xl md:text-3xl text-white leading-relaxed drop-shadow-md">
-                        {data.padrino1}
-                    </p>
-                    <div className="flex items-center justify-center gap-3 md:gap-4 my-3 md:my-5 relative z-10">
-                        <div className="w-10 md:w-12 h-[1px] bg-gradient-to-r from-transparent via-[#E8D5A3]/60 to-transparent" />
-                        <span className="text-[#E8D5A3] text-lg md:text-xl drop-shadow-sm font-light">&</span>
-                        <div className="w-10 md:w-12 h-[1px] bg-gradient-to-r from-transparent via-[#E8D5A3]/60 to-transparent" />
-                    </div>
-                    <p className="font-inv-display text-xl md:text-3xl text-white leading-relaxed drop-shadow-md">
-                        {data.padrino2}
-                    </p>
+                            <p className="font-inv-display text-xl md:text-3xl text-white leading-relaxed drop-shadow-md">
+                                {group.padrino1}
+                            </p>
+                            {group.padrino2 && (
+                                <>
+                                    <div className="flex items-center justify-center gap-3 md:gap-4 my-3 md:my-5 relative z-10">
+                                        <div className="w-10 md:w-12 h-[1px] bg-gradient-to-r from-transparent via-[#E8D5A3]/60 to-transparent" />
+                                        <span className="text-[#E8D5A3] text-lg md:text-xl drop-shadow-sm font-light">&</span>
+                                        <div className="w-10 md:w-12 h-[1px] bg-gradient-to-r from-transparent via-[#E8D5A3]/60 to-transparent" />
+                                    </div>
+                                    <p className="font-inv-display text-xl md:text-3xl text-white leading-relaxed drop-shadow-md">
+                                        {group.padrino2}
+                                    </p>
+                                </>
+                            )}
 
-                    <div className="flex items-center justify-center gap-2 mt-4 md:mt-6">
-                        <span className="text-inv-accent text-xl md:text-2xl">✦</span>
-                    </div>
+                            <div className="flex items-center justify-center gap-2 mt-4 md:mt-6">
+                                <span className="text-inv-accent text-xl md:text-2xl">✦</span>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>

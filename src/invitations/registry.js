@@ -39,7 +39,12 @@ const invitations = [
         component: lazy(() => import('./isabella/index.jsx')),
         enabled: true,
     },
-
+    {
+        slug: 'alexa-y-santiago',
+        title: 'Celebración | Alexa y Santiago',
+        component: lazy(() => import('./alexa-y-santiago/index.jsx')),
+        enabled: true,
+    },
 ]
 
 // Solo invitaciones activas
