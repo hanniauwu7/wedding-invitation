@@ -16,6 +16,9 @@
         "backgroundImage": "hero.png",
         "song": "communion.mp3"
     },
+    "seo": {
+        "shareImage": "og-preview.jpg"
+    },
     "intro": {
         "message": "Con la bendición de Dios y la guía del Espíritu Santo",
         "closingMessage": "Te invitan a celebrar el día que reciben a Jesús en su corazón por primera vez",
